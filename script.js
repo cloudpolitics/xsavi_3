@@ -143,8 +143,9 @@ function createLayerControls(){
     };
 
     var overlayMaps = {
-      "WiFI Hotspots": wifiGeoJSON,
-      "Neighborhood Map": neighborhoodsGeoJSON
+      "Neighborhood Map": neighborhoodsGeoJSON,
+      "Subway Lines": subwayLinesGeoJSON,
+      "WiFI Hotspots": wifiGeoJSON
     };
 
     L.control.layers(baseMaps, overlayMaps).addTo(map);
