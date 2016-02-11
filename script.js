@@ -8,15 +8,16 @@ map.addLayer(layer);
 
 var neighborhoodsGeoJSON;
 var wifiGeoJSON;
+var subwayLinesGeoJSON;
 
-/*$.getJSON( "geojson/NYC_neighborhood_data.geojson", function( data ) {
+$.getJSON( "geojson/NYC_neighborhood_data.geojson", function( data ) {
     var neighborhoods = data;
 
     var incomeStyle = function (feature){
         var value = feature.properties.MedHouInco;
         var fillColor = null;
         if(value >= 0 && value <=30000){
-          fillColor = "#fff";
+          fillColor = "#fee5d9";
         }
         if(value >30000 && value <=60000){
           fillColor = "#fcbba1";
@@ -30,11 +31,14 @@ var wifiGeoJSON;
         if(value > 120000 && value <=150000) {
           fillColor = "#de2d26";
         }
+        if(value > 150000) {
+          fillColor = "#a50f15"
+        }
         var style = {
           weight: 1,
-          opacity: 0,
+          opacity: 0.5,
           color: 'white',
-          fillOpacity: 0,
+          fillOpacity: 0.8,
           fillColor: fillColor
         };
         return style;
@@ -51,7 +55,7 @@ var wifiGeoJSON;
         onEachFeature: incomeClick
     }).addTo(map);
 
-});*/
+});
 
 $.getJSON( "geojson/MTA_subway_lines.geojson", function( data ) {
     // ensure jQuery has pulled all data out of the geojson file
